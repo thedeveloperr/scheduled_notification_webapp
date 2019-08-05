@@ -3,6 +3,8 @@
 A weekend Ruby on rails side project to create a tool for tech fest team and events while learning ruby on rails. This tool will allow event coordiantors to schedule reminder and announcement SMS for event particiapnts. (Will be extended to other modes soon.)
 Another aim is to open source it and allow students in my college to contribute to it and get started in open source development.
 
+## Demo video:
+https://youtu.be/8hEE2OVCa-s
 
 ### TODO:
 * Automated unit tests
@@ -32,8 +34,9 @@ aws_sns:
   secret_access_key: <replace_with_your_key>
 ```
 
-6. Run 4 terminal tabs/processes and in each tab go to project folder and run:
+6. Run 4 terminal tabs/processes and in each tab go to project folder and run these commands in each seperate tab:
 `redis-server`
 `bin/rails server`
 `QUEUE=* rake resque:work`
 `bundle exec rake resque:scheduler`
+
