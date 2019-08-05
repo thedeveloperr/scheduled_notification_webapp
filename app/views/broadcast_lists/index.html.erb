@@ -1,0 +1,11 @@
+<h1> Broadcast lists </h1>
+<div>
+    <%= link_to new_broadcast_list_path do %>
+      <button>Create a new broadcast list.</button>
+    <% end %>
+</div>
+<ul>
+<% @broadcast_lists.each do |list| %>
+    <li> <%= link_to list.name , list %> </li>
+<% end %>
+</ul>

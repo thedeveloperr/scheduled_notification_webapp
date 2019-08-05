@@ -1,0 +1,30 @@
+<%= form_with scope: :broadcast_list, url: @broadcast_list, local: true do |form| %>
+  <% if @broadcast_list.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@broadcast_list.errors.count, "error") %> prohibited
+        this List from being saved:
+      </h2>
+      <ul>
+        <% @broadcast_list.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= form.label :event_code %><br>
+    <%= form.text_field :event_code %>
+  </p>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :recipients_list %><br>
+    <%= form.text_area :recipients_list %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

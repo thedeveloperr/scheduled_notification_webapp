@@ -1,0 +1,15 @@
+<h1>Event Code: <%= @broadcast_list.event_code %>- <%= @broadcast_list.name %></h1>
+<p> <%= @broadcast_list.recipients_list %></p>
+<%= form_with(model: [ @broadcast_list, @broadcast_list.messages.build ], local: true) do |form| %>
+<p>
+    <%= form.label :txt %><br>
+    <%= form.text_area :txt %>
+    <br>
+
+    <%= form.label :schedule_timing %><br>
+    <%= form.text_area :send_at_datetime %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
