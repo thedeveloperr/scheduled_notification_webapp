@@ -7,8 +7,9 @@
     <br>
 
     <%= form.label :schedule_timing %><br>
-    <%= form.text_area :send_at_datetime %>
-  </p>
+    <%= form.text_field :send_at_datetime %>
+    <%= form.time_zone_select(:time_zone, ActiveSupport::TimeZone.all.sort) %>
+</p>
   <p>
     <%= form.submit %>
   </p>

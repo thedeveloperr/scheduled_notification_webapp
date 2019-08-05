@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
 
   private
   def messages_params
-    params.require(:message).permit(:txt, :send_at_datetime)
+    params.require(:message).permit(:txt, :send_at_datetime, :time_zone)
   end
 
 end
