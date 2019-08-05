@@ -17,6 +17,7 @@ class BroadcastListsController < ApplicationController
     @broadcast_list = BroadcastList.new(broadcast_list_params)
     if @broadcast_list.save
       redirect_to @broadcast_list
+      CreateBroadcastListJob.perform_later(@broadcast_list.id)
     else
       render 'new'
     end
